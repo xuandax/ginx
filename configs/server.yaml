@@ -1,0 +1,23 @@
+app:
+  port: 8080
+  run_model: debug # debug、release
+  read_timeout: 60
+  write_timeout: 60
+
+log:
+  #调用zap的sugar产生的日志（建议优先使用，功能强大）
+  sugar_dir: ./storage/logs/log/
+  sugar_info_filename: info
+  sugar_error_filename: error
+  sugar_ext: .log
+  #直接调用zap的logger产生的日志（性能好，但是功能单一）
+  dir: ./storage/logs/logger/
+  info_filename: info
+  error_filename: error
+  ext: .log
+  #日志分割配置
+  max_size: 10 # 单个文件最大多少M
+  max_age: 7 # days 保留旧日志文件的最大天数
+  max_backups: 100 #要保留的最大旧日志文件数
+  local_time: true #是否格式化时间戳的时间
+  compress: false #是否使用gzip压缩， 默认不压缩

@@ -1,0 +1,28 @@
+mysql:
+  type: mysql
+  user_name: root
+  password: root
+  host: 127.0.0.1:3306
+  db_name: test
+  charset: utf8
+  parstime: True
+  max_idle_conns: 10
+  max_open_conns: 30
+  conn_max_lifetime: 3600 #秒
+  #SQL日志配置
+  log_dir: /data/wwwroot/go/src/github.com/xuanxiaox/ginx/storage/logs/sql/
+  log_filename: sql
+  log_ext: .log
+  log_slow_threshold: 10000000 #慢SQL阀值 单位ns  10ms
+  log_level: info #silent、error、warn、info silent:不写日志 error：只写数据库错误日志 warn：写慢查询和错误日志 info:写全部日志
+  #SQL日志分割配置
+  log_max_size: 10 # 单个文件最大多少M
+  log_max_age: 7 # days 保留旧日志文件的最大天数
+  log_max_backups: 100 #要保留的最大旧日志文件数
+  log_local_time: false #是否格式化时间戳的时间
+  log_compress: false #是否使用gzip压缩， 默认不压缩
+
+redis:
+  db: 0
+  host: 127.0.0.1:6379
+  password: ""

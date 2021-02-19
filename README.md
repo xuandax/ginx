@@ -1,1 +1,1 @@
-# gin_default
+# ginx
