@@ -2,7 +2,7 @@ package db
 
 import (
 	"github.com/gomodule/redigo/redis"
-	"github.com/xuanxiaox/ginx/global"
+	"github.com/xuandax/ginx/g"
 	"time"
 )
 
@@ -10,21 +10,21 @@ func NewRedisPool() *redis.Pool {
 	pool := &redis.Pool{
 		Dial: func() (redis.Conn, error) {
 			c, err := redis.Dial("tcp",
-				global.DBConfig.GetString("redis.host"),
-				redis.DialPassword(global.DBConfig.GetString("redis.password")),
-				redis.DialDatabase(global.DBConfig.GetInt("redis.db")),
+				g.DBConfig.GetString("redis.host"),
+				redis.DialPassword(g.DBConfig.GetString("redis.password")),
+				redis.DialDatabase(g.DBConfig.GetInt("redis.db")),
 			)
 			if err != nil {
-				global.Log.Errorf("redis.Dial err:%v", err)
+				g.Log.Errorf("redis.Dial err:%v", err)
 			}
-			if _, err := c.Do("AUTH", global.DBConfig.GetString("redis.password")); err != nil {
+			if _, err := c.Do("AUTH", g.DBConfig.GetString("redis.password")); err != nil {
 				c.Close()
-				global.Log.Errorf("c.Do AUTH err:%v", err)
+				g.Log.Errorf("c.Do AUTH err:%v", err)
 				return nil, err
 			}
-			if _, err := c.Do("SELECT", global.DBConfig.GetInt("redis.db")); err != nil {
+			if _, err := c.Do("SELECT", g.DBConfig.GetInt("redis.db")); err != nil {
 				c.Close()
-				global.Log.Errorf("c.Do SELECT err:%v", err)
+				g.Log.Errorf("c.Do SELECT err:%v", err)
 				return nil, err
 			}
 			return c, err

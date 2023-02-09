@@ -2,8 +2,8 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/xuanxiaox/ginx/internal/api"
-	"github.com/xuanxiaox/ginx/internal/middleware"
+	"github.com/xuandax/ginx/internal/api"
+	"github.com/xuandax/ginx/internal/middleware"
 )
 
 func Router(r *gin.Engine) {

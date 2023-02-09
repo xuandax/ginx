@@ -1,4 +1,4 @@
-package global
+package g
 
 import "github.com/spf13/viper"
 

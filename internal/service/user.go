@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/xuanxiaox/ginx/internal/model"
+	"github.com/xuandax/ginx/internal/model"
 )
 
 type UserServicer interface {

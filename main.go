@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/xuanxiaox/ginx/global"
-	"github.com/xuanxiaox/ginx/internal/routers"
-	"github.com/xuanxiaox/ginx/pkg/config"
-	"github.com/xuanxiaox/ginx/pkg/db"
-	"github.com/xuanxiaox/ginx/pkg/log"
+	"github.com/xuandax/ginx/g"
+	"github.com/xuandax/ginx/internal/routers"
+	"github.com/xuandax/ginx/pkg/config"
+	"github.com/xuandax/ginx/pkg/db"
+	"github.com/xuandax/ginx/pkg/log"
 )
 
 func main() {
@@ -25,20 +25,20 @@ func setGlobal() {
 	setGDB()
 }
 
-//1 设置配置文件
+// 1 设置配置文件
 func setConfig() {
-	global.ServerConfig = config.ViperServerConfig()
-	global.DBConfig = config.ViperDBConfig()
+	g.ServerConfig = config.ViperServerConfig()
+	g.DBConfig = config.ViperDBConfig()
 }
 
-//设置zap日志
+// 设置zap日志
 func setLog() {
-	global.Log = log.NewZapSugarLogger()
-	global.Logger = log.NewZapLogger()
+	g.Log = log.NewZapSugarLogger()
+	g.Logger = log.NewZapLogger()
 }
 
-//设置db
+// 设置db
 func setGDB() {
-	global.GDB = db.NewDb()
-	global.RedisPool = db.NewRedisPool()
+	g.GDB = db.NewDb()
+	g.RedisPool = db.NewRedisPool()
 }

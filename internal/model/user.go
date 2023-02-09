@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/xuanxiaox/ginx/global"
+	"github.com/xuandax/ginx/g"
 	"gorm.io/gorm"
 	"time"
 )
@@ -12,6 +12,7 @@ type UserModeler interface {
 }
 
 type User struct {
+	gorm.Model
 	Id        int            `json:"id" gorm:"type:int(10) unsigned;primarykey"`
 	Username  string         `json:"username" gorm:"type:varchar(30);not null;default:'';comment:姓名"`
 	Password  string         `json:"password" gorm:"type:varchar(32);not null;default:'';comment:密码"`
@@ -22,11 +23,11 @@ type User struct {
 }
 
 func (m *User) GetById() (user User, err error) {
-	err = global.GDB.Model(m).Where("id = ?", m.Id).First(&user).Error
+	err = g.GDB.Model(m).Where("id = ?", m.Id).First(&user).Error
 	return
 }
 
 func (m *User) List() (users []*User, err error) {
-	err = global.GDB.Model(m).Find(&users).Error
+	err = g.GDB.Model(m).Find(&users).Error
 	return
 }

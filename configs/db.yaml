@@ -2,7 +2,7 @@ mysql:
   type: mysql
   user_name: root
   password: root
-  host: 127.0.0.1:3306
+  host: 192.168.50.235:3306
   db_name: test
   charset: utf8
   parstime: True
@@ -10,7 +10,7 @@ mysql:
   max_open_conns: 30
   conn_max_lifetime: 3600 #秒
   #SQL日志配置
-  log_dir: /data/wwwroot/go/src/github.com/xuanxiaox/ginx/storage/logs/sql/
+  log_dir: ../storage/logs/sql/
   log_filename: sql
   log_ext: .log
   log_slow_threshold: 10000000 #慢SQL阀值 单位ns  10ms

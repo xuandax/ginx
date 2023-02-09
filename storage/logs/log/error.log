@@ -1,1 +1,2 @@
 {"L":"ERROR","T":"2020-12-29T16:39:48.330+0800","C":"api/test.go:21","M":"21321321321"}
+{"L":"FATAL","T":"2023-02-09T16:45:18.720+0800","C":"db/mysql.go:37","M":"NewDb gorm.Open err:dial tcp 127.0.0.1:3306: connectex: No connection could be made because the target machine actively refused it."}

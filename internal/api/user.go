@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/xuanxiaox/ginx/internal/model"
-	"github.com/xuanxiaox/ginx/internal/service"
+	"github.com/xuandax/ginx/internal/model"
+	"github.com/xuandax/ginx/internal/service"
 	"strconv"
 )
 
